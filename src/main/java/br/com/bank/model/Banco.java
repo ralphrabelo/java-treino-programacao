@@ -22,7 +22,7 @@ public class Banco {
     }
     public Conta pesquisarContaDoCliente(String cpf) {
         Conta c = null;
-        for (int i = 0; i < contas.size(); i++) {
+        for (int i = 0; i < contas.size() && c == null; i++) {
             if (contas.get(i).getCpf().equals(cpf)) {
                 c = contas.get(i);
             }
