@@ -1,7 +1,8 @@
 package br.com.bank;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import br.com.bank.CaminhoArquivo;
 
 import java.nio.file.Paths;
 import java.text.DateFormat;
@@ -41,12 +42,17 @@ class CaminhoArquivoTest {
         assertEquals(Paths.get("/tmp/3"), caminhoArquivo.getDiretorio());
         assertEquals(Paths.get("/tmp/3/2001"), caminhoArquivo.getArquivo());
 
+    }
 
+    @Test
+    public void deve_montar_caminho_para_arquivo_vazio() {
+
+        CaminhoArquivo caminhoArquivo = CaminhoArquivo.getInstance();
+        
         Date date = Calendar.getInstance().getTime();  
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(date);  
-
-        caminhoArquivo = CaminhoArquivo.getInstance();
+       
         assertEquals(Paths.get("/tmp/", strDate), caminhoArquivo.getDiretorio());
         assertEquals(Paths.get("/tmp/", strDate, strDate), caminhoArquivo.getArquivo());
     }

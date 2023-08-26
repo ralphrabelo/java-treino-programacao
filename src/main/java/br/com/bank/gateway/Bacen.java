@@ -1,7 +1,6 @@
 package br.com.bank.gateway;
 
-
-import br.com.bank.model.Banco;
+import br.com.coruja.model.Banco;
 
 public class Bacen {
 

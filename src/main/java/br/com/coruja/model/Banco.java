@@ -1,4 +1,4 @@
-package br.com.bank.model;
+package br.com.coruja.model;
 
 
 import java.util.ArrayList;
@@ -20,14 +20,14 @@ public class Banco {
     public void adicionarConta(Conta conta) {
         contas.add(conta);
     }
-    public Conta pesquisarContaDoCliente(String cpf) {
+    public Optional<Conta> pesquisarContaDoCliente(String cpf) {
         Conta c = null;
         for (int i = 0; i < contas.size() && c == null; i++) {
             if (contas.get(i).getCpf().equals(cpf)) {
                 c = contas.get(i);
             }
         }
-        return c;
+        return Optional.ofNullable(c);
     }
 
     public List<Conta> listarContasAltaRenda() {
@@ -36,5 +36,9 @@ public class Banco {
 
     private List<Conta> filtrarContas(Predicate<Conta> filtro) {
         return contas.stream().filter(filtro).collect(Collectors.toList());
+    }
+
+    public Integer getTotalDeContas(){
+        return contas.size();
     }
 }

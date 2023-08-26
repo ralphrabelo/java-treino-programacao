@@ -1,9 +1,7 @@
-package br.com.bank.service;
+package br.com.coruja.service;
 
-import br.com.bank.model.Banco;
 import br.com.bank.gateway.Bacen;
-
-
+import br.com.coruja.model.Banco;
 
 public class SistemaBancario {
 
@@ -17,4 +15,6 @@ public class SistemaBancario {
 	public long registrarBanco(Banco banco) {
 		return bacen.cadastrarBanco(banco);
 	}
+
+
 }

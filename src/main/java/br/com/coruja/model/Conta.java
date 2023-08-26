@@ -1,4 +1,4 @@
-package br.com.bank.model;
+package br.com.coruja.model;
 
 
 public class Conta {
